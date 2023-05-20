@@ -1,0 +1,35 @@
+<header class="bg-base-100 shadow-2xl ">
+  
+  <div class="navbar bg-base-100">
+    {{!-- LOGO --}}
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl" href="{{@site.url}}">
+        {{#if @site.logo}}
+          <img src="{{@site.logo}}" alt="{{@site.title}}" />
+        {{else}}
+          {{@site.title}}
+        {{/if}}
+      </a>
+      <a class="gh-burger" role="button" aria-label="menu">
+        <div class="gh-burger-box">
+          <div class="gh-burger-inner"></div>
+        </div>
+      </a>
+    </div>
+
+    {{!-- MAIN NAVIGATION --}}
+    <nav class="
+      flex-none prose
+      prose-ul:menu prose-ul:menu-horizontal prose-ul:px-1
+      prose-li:h-fit prose-li:m-0
+      prose-a:btn prose-a:btn-ghost prose-a:rounded-2xl prose-a:h-fit prose-a:m-0
+      ">
+        {{navigation}}
+    </nav>
+  </div>
+
+  {{!-- SUB NAVIGATION --}}
+  <div class="bg-base-200 px-4 py-1">
+  </div>
+
+</header>

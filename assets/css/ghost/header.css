@@ -55,10 +55,7 @@
 }
 
 .gh-head-menu .nav {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
+    @apply menu menu-horizontal px-1;
 }
 
 .gh-head-menu .nav li {
