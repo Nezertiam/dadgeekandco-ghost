@@ -3,9 +3,9 @@
   <div class="navbar bg-base-100">
     {{!-- LOGO --}}
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl" href="{{@site.url}}">
+      <a class="btn btn-ghost normal-case text-xl max-w-[600px] max-h-[72px] overflow-hidden object-cover object-center" href="{{@site.url}}">
         {{#if @site.logo}}
-          <img src="{{@site.logo}}" alt="{{@site.title}}" />
+          <img src="{{@site.logo}}" alt="{{@site.title}}" class="w-full" />
         {{else}}
           {{@site.title}}
         {{/if}}
