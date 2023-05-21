@@ -18,18 +18,21 @@
     </div>
 
     {{!-- MAIN NAVIGATION --}}
-    <nav class="
+    {{!-- <nav class="
       flex-none prose
       prose-ul:menu prose-ul:menu-horizontal prose-ul:px-1
       prose-li:h-fit prose-li:m-0
       prose-a:btn prose-a:btn-ghost prose-a:rounded-2xl prose-a:h-fit prose-a:m-0
       ">
         {{navigation}}
+    </nav> --}}
+    <nav>
+      {{#foreach @site.navigation}}
+        <a class="btn btn-ghost btn-sm" href="{{url}}">{{label}}</a>
+      {{/foreach}}
     </nav>
   </div>
 
-  {{!-- SUB NAVIGATION --}}
-  <div class="bg-base-200 px-4 py-1">
-  </div>
+  <div class="bg-base-200 bg-gradient-to-r from-primary to-secondary px-4 py-1"></div>
 
 </header>

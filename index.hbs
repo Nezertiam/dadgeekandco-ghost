@@ -12,15 +12,38 @@
   {{!-- PAGE CONTENT --}}
   <div class="gh-page">
     <div class="gh-container">
-      
-      <div class="flex justify-center mt-12 mb-6 md:mb-0">
-        <p class="text-4xl font-bold flex flex-col text-center md:text-end gap-4">
-          <q>{{@site.description}}</q>
-          <span class="text-base italic md:mr-8">@Dadgeek</span>
-        </p>
+
+      <h2 class="text-3xl font-bold mb-4">Nos derniers tests</h2>
+      {{#get "posts" filter="featured:false + tags:['test']" limit="3" include="tags,authors"}}
+        {{> "feed"}}
+      {{/get}}
+      <div class="mt-4 flex justify-center sm:justify-end">
+        <a href="/tags/test" class="btn btn-primary btn-sm">Voir plus</a>
       </div>
 
-      {{> "postfeed"}}
+      <div class="divider"></div>
+
+      <h2 class="text-3xl font-bold mb-4">Nos derniers articles</h2>
+      {{#get "posts" filter="featured:false + tags:['news']" limit="3" include="tags,authors"}}
+        {{> "feed"}}
+      {{/get}}
+      <div class="mt-4 flex justify-center sm:justify-end">
+        <a href="/tags/news" class="btn btn-primary btn-sm">Voir plus</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 class="text-3xl font-bold mb-4">Nos dernières vidéos</h2>
+      {{#get "posts" filter="featured:false + tags:['video']" limit="3" include="tags,authors"}}
+        {{> "feed"}}
+      {{/get}}
+      <div class="mt-4 flex justify-center sm:justify-end">
+        <a href="/tags/video" class="btn btn-primary btn-sm">Voir plus</a>
+      </div>
+      
+      <div class="mb-12">
+        {{> "quote"}}
+      </div>
 
       {{!-- If JS isn't enabled, fallback to standard pagination --}}
       <noscript>
