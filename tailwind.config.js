@@ -6,10 +6,12 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require("daisyui")
+    require('@tailwindcss/line-clamp'),
+    require("daisyui"),
   ],
   daisyui: {
     themes: [
+      "cupcake",
       {
         tuttifrutti: {
           "primary": "#8de045",
@@ -24,7 +26,7 @@ export default {
         },
       },
       {
-        dadgeek: {
+        default: {
           "primary": "#d1523c",
           "secondary": "#a0aa0b",
           "accent": "#3d9ece",

@@ -49,11 +49,7 @@ html,
 
 .gh-page {
     padding: 0 4vmin;
-    @apply pt-12;
-}
-
-.gh-article {
-    padding: 8vmin 0;
+    @apply pt-10;
 }
 
 .gh-postfeed {
@@ -109,7 +105,7 @@ html,
     width: 100%;
     /* max-height: 700px; */
     object-fit: cover;
-    margin-bottom: 4vmin;
+    @apply mb-4;
     aspect-ratio: 1 / 1;
 }
 

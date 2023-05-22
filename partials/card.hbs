@@ -2,10 +2,10 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="gh-card {{post_class}} bg-base-300 rounded-3xl w-full overflow-hidden">
-  <a class="gh-card-link px-6 py-12" href="{{url}}">
+<article class="gh-card {{post_class}} bg-base-100 rounded-3xl w-full overflow-hidden h-full shadow-lg">
+  <a class="gh-card-link px-4 py-6 flex flex-col h-full" href="{{url}}">
     {{#if feature_image}}
-      <picture class="gh-card-picture">
+      <picture class="gh-card-picture flex-0">
         <source 
           srcset="
           {{img_url feature_image size="xxs" format="avif"}} 30w,
@@ -47,11 +47,19 @@ Re-usable card for linking to posts
         >
       </picture>
     {{/if}}
-    <div class="gh-card-content">
-      <h2 class="gh-card-title text-3xl font-bold">{{title}}</h2>
-      <span class="text-xs gh-card-meta">par <span class="text-secondary">{{primary_author.name}}</span> &bull; <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-      <p class="text-base text-justify hidden sm:block">{{excerpt}}</p>
-      <span class="btn btn-ghost btn-sm">Lire la suite</span>
+    <div class="gh-card-content flex flex-col justify-between flex-1 h-full w-full">
+      <h2 class="text-2xl font-bold text-ellipsis line-clamp-4 h-full w-full px-1">{{title}}</h2>
+      <div>
+        <p class="text-xs gh-card-meta">
+          par <span class="text-secondary">{{primary_author.name}}</span>
+          <span>&bull;</span> 
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+          <br>
+          <span>{{reading_time}}</span>
+        </p>
+        {{!-- <p class="text-base text-justify hidden sm:block">{{excerpt}}</p> --}}
+        <span class="btn btn-ghost btn-sm">Lire la suite</span>
+      </div>
     </div>
   </a>
 </article>

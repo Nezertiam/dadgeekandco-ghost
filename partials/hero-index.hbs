@@ -45,26 +45,31 @@
             class="w-full md:h-full md:object-cover md:object-center"
             {{^if @first}}loading="lazy"{{/if}}
           >
+          <div class="hidden md:block bg-gradient-to-tr from-primary to-secondary absolute top-0 left-0 bottom-0 right-0 z-10 opacity-70"></div>
         </picture>
       {{/if}}
 
 
       {{!-- POST OVERVIEW --}}
-      <div class="md:absolute z-10 bottom-0 left-0 right-0 pt-6 pb-6 sm:p-8 flex flex-col gap-4">
-        <h2 class="text-5xl font-bold">{{ title }}</h2>
-        <div class="mt-4">
-          {{#if tags length=">0"}}
-            {{#foreach tags}}
-              {{> "tag-badge"}}
-            {{/foreach}}
-            &bull;
-          {{/if}}
-          <span>
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-          </span>
+      <div class="md:absolute z-10 bottom-0 left-0 right-0 md:clear-right md:w-fit flex flex-col gap-4">
+        <div class="relative pt-6 pb-6 sm:p-8">
+          <div class="relative z-20">
+            <h2 class="text-5xl font-bold">{{ title }}</h2>
+            <div class="mt-4 mb-2">
+              {{#if tags length=">0"}}
+                {{#foreach tags}}
+                  {{> "tag-badge"}}
+                {{/foreach}}
+                &bull;
+              {{/if}}
+              <span>
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+              </span>
+            </div>
+            <p class="uppercase mb-4">par <span class="text-secondary">{{primary_author.name}}</span> &bull; {{reading_time}} </p>
+            <p class="lg:w-1/2">{{excerpt}} <a href="{{url}}" class="btn btn-ghost btn-sm">Lire la suite</a> </p>
+          </div>
         </div>
-        <p class="uppercase">par <span class="text-secondary">{{primary_author.name}}</span> &bull; {{reading_time}} </p>
-        <p class="lg:w-1/2">{{excerpt}} <a href="{{url}}" class="btn btn-ghost btn-sm">Lire la suite</a> </p>
       </div>
 
 
