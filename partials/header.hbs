@@ -13,31 +13,34 @@
           </span>
         </a>
       </div>
-      {{!-- <a class="gh-burger" role="button" aria-label="menu">
-        <div class="gh-burger-box">
-          <div class="gh-burger-inner"></div>
-        </div>
-      </a> --}}
     </div>
 
     {{!-- MAIN NAVIGATION --}}
-    {{!-- <nav class="
-      flex-none prose
-      prose-ul:menu prose-ul:menu-horizontal prose-ul:px-1
-      prose-li:h-fit prose-li:m-0
-      prose-a:btn prose-a:btn-ghost prose-a:rounded-2xl prose-a:h-fit prose-a:m-0
-      ">
-        {{navigation}}
-    </nav> --}}
-    <div class="flex gap-4" id="header-right">
-      <nav>
-        {{#foreach @site.navigation}}
-          <a class="btn btn-ghost btn-sm" href="{{url}}">{{label}}</a>
-        {{/foreach}}
-      </nav>
+    <div class="flex gap-4">
+      {{!-- MOBILE DRAWER - DESKTOP NAVBAR --}}
+      <div id="header-right" class="fixed pt-12 pb-4 px-4 md:p-0 top-0 left-0 right-0 bottom-0 bg-base-300 md:static md:bg-transparent flex flex-col-reverse md:flex-row justify-end gap-4 z-10 -translate-y-full transition-all md:translate-y-0">
+        <nav class="flex flex-col md:flex-row">
+          {{#foreach @site.navigation}}
+            <a class="btn btn-ghost btn-md md:btn-sm text-lg md:text-sm" href="{{url}}">{{label}}</a>
+          {{/foreach}}
+        </nav>
+      </div>
+      {{!-- BURGER MENU --}}
+      <div class="flex items-center md:hidden relative z-50">
+        <button class="btn btn-ghost btn-sm btn-square gh-burger">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+            </path>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    {{!-- THEME SWITCHER --}}
     <script class="hidden">
-      const themes = ['default', 'cupcake', 'tuttifrutti']
+      const themes = ['default', 'cupcake', 'tuttifrutti', 'mango']
       const defaultTheme = localStorage.getItem('theme') || 'default'
 
       const html = document.querySelector('body')
@@ -73,8 +76,11 @@
       dropdownContainer.classList.add('dropdown', 'dropdown-end')
       dropdownContainer.append(label)
       dropdownContainer.append(ul)
+      const div = document.createElement('div')
+      div.append(dropdownContainer)
+      div.classList.add('flex', 'justify-center', 'gap-4')
       const container = document.querySelector('#header-right')
-      container.append(dropdownContainer)
+      container.append(div)
     </script>
   </div>
 

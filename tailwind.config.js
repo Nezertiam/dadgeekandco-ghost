@@ -13,6 +13,17 @@ export default {
     themes: [
       "cupcake",
       {
+        default: {
+          "primary": "#f5082d",
+          "secondary": "#9127a1",
+          "accent": "#3d9ece",
+          "neutral": "#211826",
+          "base-100": "#353149",
+          "info": "#5CA0D1",
+          "success": "#165A30",
+          "warning": "#E1900E",
+          "error": "#F31B34"
+        },
         tuttifrutti: {
           "primary": "#8de045",
           "secondary": "#ea841e",
@@ -24,9 +35,7 @@ export default {
           "warning": "#F4CE10",
           "error": "#E12362",
         },
-      },
-      {
-        default: {
+        mango: {
           "primary": "#d1523c",
           "secondary": "#a0aa0b",
           "accent": "#3d9ece",
