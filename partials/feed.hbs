@@ -1,8 +1,12 @@
 <div class="w-full carousel md:grid md:grid-cols-3 sm:gap-4 py-4">
   {{#foreach posts}}
-    <div class="carousel-item w-full sm:w-64 md:w-full">
+    <div class="carousel-item w-full sm:w-64 md:w-full md:first:col-span-3">
       <div class="w-full md:w-full px-3 sm:px-0">
-        {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+        {{#if @first}}
+          {{> "card-first" page=../pagination.page }} {{!-- partials/card.hbs --}}
+        {{else}}
+          {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+        {{/if}}
       </div>
     </div>
   {{/foreach}}

@@ -13,8 +13,8 @@
   <div class="gh-page">
     <div class="gh-container">
 
-      <h2 class="text-3xl font-bold mb-4">Nos derniers tests</h2>
-      {{#get "posts" filter="featured:false + tags:['test']" limit="3" include="tags,authors"}}
+      <h2 class="text-3xl font-bold mb-4 text-gradient-ps">Nos derniers tests</h2>
+      {{#get "posts" filter="featured:false + tags:['test']" limit="4" include="tags,authors"}}
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
@@ -23,8 +23,8 @@
 
       <div class="divider"></div>
 
-      <h2 class="text-3xl font-bold mb-4">Nos derniers articles</h2>
-      {{#get "posts" filter="featured:false + tags:['news']" limit="3" include="tags,authors"}}
+      <h2 class="text-3xl font-bold mb-4 text-gradient-sp">Nos derniers articles</h2>
+      {{#get "posts" filter="featured:false + tags:['news']" limit="4" include="tags,authors"}}
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
@@ -33,8 +33,8 @@
 
       <div class="divider"></div>
 
-      <h2 class="text-3xl font-bold mb-4">Nos dernières vidéos</h2>
-      {{#get "posts" filter="featured:false + tags:['video']" limit="3" include="tags,authors"}}
+      <h2 class="text-3xl font-bold mb-4 text-gradient-ps">Nos dernières vidéos</h2>
+      {{#get "posts" filter="featured:false + tags:['video']" limit="4" include="tags,authors"}}
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
