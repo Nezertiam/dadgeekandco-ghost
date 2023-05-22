@@ -1,15 +1,15 @@
 {
 
   "default": {
-    "primary": "#f5082d",
-    "secondary": "#9127a1",
-    "accent": "#3d9ece",
-    "neutral": "#211826",
-    "base-100": "#353149",
-    "info": "#5CA0D1",
-    "success": "#165A30",
-    "warning": "#E1900E",
-    "error": "#F31B34"
+    "primary": "#be123c",   
+    "secondary": "#7e22ce",   
+    "accent": "#ca8a04",   
+    "neutral": "#191D24",   
+    "base-100": "#2A303C",   
+    "info": "#3ABFF8",
+    "success": "#36D399",
+    "warning": "#FBBD23",
+    "error": "#F87272"
   },
 
   "tuttifrutti": {
