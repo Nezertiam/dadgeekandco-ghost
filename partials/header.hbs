@@ -19,10 +19,8 @@
     <div class="flex gap-4">
       {{!-- MOBILE DRAWER - DESKTOP NAVBAR --}}
       <div id="header-right" class="fixed pt-12 pb-4 px-4 md:p-0 top-0 left-0 right-0 bottom-0 bg-base-300 md:static md:bg-transparent flex flex-col-reverse md:flex-row justify-end gap-4 z-10 -translate-y-full transition-all md:translate-y-0">
-        <nav class="flex flex-col md:flex-row">
-          {{#foreach @site.navigation}}
-            <a class="btn btn-ghost btn-md md:btn-sm text-lg md:text-sm" href="{{url}}">{{label}}</a>
-          {{/foreach}}
+        <nav class="prose-ul:flex prose-ul:flex-col prose-ul:md:flex-row md:flex md:items-center">
+          {{navigation}}
         </nav>
       </div>
       {{!-- BURGER MENU --}}

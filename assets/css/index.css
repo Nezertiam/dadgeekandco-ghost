@@ -280,3 +280,8 @@ html,
         font-size: 1.6rem;
     }
 }
+
+
+ul.nav li a {
+    @apply btn btn-sm btn-ghost;
+}
