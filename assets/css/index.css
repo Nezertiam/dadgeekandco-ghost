@@ -105,7 +105,7 @@ html,
     width: 100%;
     /* max-height: 700px; */
     object-fit: cover;
-    @apply mb-4;
+    @apply mb-4 md:mb-0;
     aspect-ratio: 1 / 1;
 }
 
@@ -157,6 +157,19 @@ html,
     @apply from-secondary to-primary;
 }
 
+.prose-post-content {
+    @apply prose-a:text-accent;
+    @apply prose-figcaption:text-center prose-blockquote:border-primary;
+}
+
+.prose-post-content h2 {
+    @apply text-gradient-ps;
+}
+
+.prose-post-content h3 {
+    @apply text-gradient-sp;
+}
+
 
 /* Page
 /* ---------------------------------------------------------- */
@@ -191,7 +204,6 @@ html,
 /* ---------------------------------------------------------- */
 
 .gh-header {
-    padding: 0 0 8vmin 0;
     text-align: center;
 }
 
@@ -211,7 +223,7 @@ html,
 .gh-feature-image {
     grid-column: wide-start / wide-end;
     width: 100%;
-    margin: 8vmin 0 0;
+    @apply max-w-3xl mx-auto;
 }
 
 .gh-feature-image img {

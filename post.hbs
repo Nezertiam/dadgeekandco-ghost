@@ -4,30 +4,22 @@
 
 <article class="gh-article {{post_class}} mt-28 px-4 pb-4">
 
-  <header class="gh-header gh-canvas flex flex-col gap-4">
-    <h1 class="text-4xl font-bold bg-clip-text text-gradient-ps">
-      {{title}}
-    </h1>
-    
-    <div>{{#foreach tags}}{{> "tag-badge"}}{{/foreach}}</div>
+  <header class="gh-header gh-canvas flex flex-col gap-4 mb-8">
+    <div>
+      <h1 class="text-4xl font-bold bg-clip-text text-gradient-ps mb-2 max-w-3xl mx-auto">
+        {{title}}
+      </h1>
+      
+      <div>{{#foreach tags}}{{> "tag-badge"}}{{/foreach}}</div>
 
-    <div class="flex items-center">
-      {{#if primary_author.profile_image}}
-        <div class="avatar">
-          <div class="w-16 rounded-full">
-            <img src="{{primary_author.profile_image}}" />
-          </div>
-        </div>
-      {{/if}}
-      <div class="text-left uppercase text-xs">
-        <p>Par {{#foreach authors}}<a href="{{url}}" class="gh-author-link link">{{name}}</a>{{#unless @last}}, {{/unless}}{{/foreach}}</p>
-        <p class="gh-post-authors">{{date format="D MMM YYYY"}} <span class="bull">&bull;</span> {{reading_time}}</p>
+      <div class="max-w-3xl mx-auto">
+
+        {{#if custom_excerpt}}
+          <p class="gh-excerpt font-bold text-justify">{{custom_excerpt}}</p>
+        {{/if}}
+
       </div>
     </div>
-
-    {{#if custom_excerpt}}
-      <p class="gh-excerpt text-left font-bold">{{custom_excerpt}}</p>
-    {{/if}}
 
     {{#if feature_image}}
     <figure class="gh-feature-image">
@@ -73,12 +65,26 @@
     </figure>
     {{/if}}
     
-    <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+    <div class="flex items-center max-w-3xl mx-auto w-full">
+      {{#if primary_author.profile_image}}
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <img src="{{primary_author.profile_image}}" />
+          </div>
+        </div>
+      {{/if}}
+      <div class="text-left uppercase text-xs">
+        <p>Par {{#foreach authors}}<a href="{{url}}" class="gh-author-link link">{{name}}</a>{{#unless @last}}, {{/unless}}{{/foreach}}</p>
+        <p class="gh-post-authors">{{date format="D MMM YYYY"}} <span class="bull">&bull;</span> {{reading_time}}</p>
+      </div>
+    </div>
 
   </header>
 
-  <div class="gh-content gh-canvas prose">
-    {{content}}
+  <div class="flex justify-center">
+    <div class="gh-content gh-canvas prose text-justify prose-post-content">
+      {{content}}
+    </div>
   </div>
 
   <footer class="gh-footer gh-canvas">
@@ -93,15 +99,20 @@
 
 </article>
 
-<aside class="gh-readmore">
-  <div class="gh-readmore-inner gh-container">
+<div class="divider"></div>
+
+<aside class="gh-readmore mb-12 mt-4">
+  <h3 class="text-center font-bold text-2xl mb-4">Articles qui pourraient aussi vous intéresser</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-8 md:gap-16 px-8">
     <div class="gh-readmore-next">
-      {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+      {{#next_post in="primary_tag"}}
+        {{> "card-more"}}
+      {{/next_post}}
     </div>
     <div class="gh-readmore-prev">
-      {{#prev_post}}<a href="{{url}}">
-        <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-      </a>{{/prev_post}}
+      {{#prev_post in="primary_tag"}}
+        {{> "card-more"}}
+      {{/prev_post}}
     </div>
   </div>
 </aside>
