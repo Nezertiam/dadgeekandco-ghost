@@ -1,46 +1,61 @@
 {{!< default}}
 
 <div class="gh-page">
-    <div class="gh-container">
+  <div class="gh-container">
 
-        {{#author}}
-        <header class="gh-page-head">
-            {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-
-            <h1>{{name}}</h1>
-            {{#if bio}}
-                <p>{{bio}}</p>
-            {{/if}}
-
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
-                    {{#if website}}
-                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-                    {{/if}}
-                    {{#if twitter}}
-                        <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
-                    {{/if}}
-                    {{#if facebook}}
-                        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-                    {{/if}}
-                </div>
-            </div>
-
-            {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
-            {{/if}}
-        </header>
-        {{/author}}
-
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
+    {{#author}}
+    <header class="gh-page-head">
+      {{#if cover_image}}
+      <div class="w-full h-[300px] bg-center object-cover translate-y-14" style="background-image: url({{cover_image}}); background-size: cover"></div>
+      {{/if}}
+      {{#if profile_image}}
+        <div class="avatar">
+          <div class="w-24 rounded-full">
+            <img src="{{profile_image}}" />
+          </div>
         </div>
+      {{/if}}
 
+      <h1 class="font-bold">{{name}}</h1><span>{{#if location}}aka {{location}}{{/if}}</span>
+      {{#if bio}}
+        <p>{{bio}}</p>
+      {{/if}}
+
+      <div class="gh-author-meta mt-4">
+        {{#if website}}
+          <span class="text-xl font-bold">Retrouvez moi aussi sur les réseaux</span>
+        {{/if}}
+        {{#if twitter}}
+          {{#unless website}}
+            <span class="text-xl font-bold">Retrouvez moi aussi sur les réseaux</span>
+          {{/unless}}
+        {{/if}}
+        {{#if facebook}}
+          {{#unless website}}
+            {{#unless twitter}}
+              <span class="text-xl font-bold">Retrouvez moi aussi sur les réseaux</span>
+            {{/unless}}
+          {{/unless}}
+        {{/if}}
+        <div class="gh-author-links">
+          {{#if website}}
+            <a class="link link-accent" href="{{website}}" target="_blank" rel="noopener">Site internet</a>
+          {{/if}}
+          {{#if twitter}}
+            <a class="link link-accent" href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
+          {{/if}}
+          {{#if facebook}}
+            <a class="link link-accent" href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
+          {{/if}}
+        </div>
+      </div>
+
+    </header>
+    {{/author}}
+
+    <div class="gh-postfeed">
+      {{> "feed"}}
     </div>
+
+  </div>
 </div>

@@ -52,17 +52,6 @@ html,
     @apply pt-10;
 }
 
-.gh-postfeed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
-    gap: 4.8vmin 4vmin;
-    padding: 8vmin 0;
-}
-
-.gh-postfeed > *:first-child {
-    grid-column: 1 / -1;
-}
-
 .gh-container {
     width: 100%;
     margin: 0 auto;
