@@ -35,51 +35,6 @@
         </button>
       </div>
     </div>
-
-    {{!-- THEME SWITCHER --}}
-    <script class="hidden">
-      const themes = ['default', 'cupcake', 'tuttifrutti', 'mango']
-      const defaultTheme = localStorage.getItem('theme') || 'default'
-
-      const html = document.querySelector('body')
-      html.setAttribute('data-theme', defaultTheme)
-      const changeTheme = (theme) => {
-        html.setAttribute('data-theme', theme)
-        localStorage.setItem('theme', theme)
-        const ul = document.querySelector('#theme-dropdown')
-        const buttons = ul.querySelectorAll('button')
-        buttons.forEach(button => button.classList.remove('active'))
-        const index = themes.findIndex(t => t === theme)
-        buttons[index].classList.add('active')
-      }
-
-      const label = document.createElement('label')
-      label.classList.add('select', 'select-xs', 'flex', 'items-center', 'm-1')
-      label.innerText = 'Thème'
-      label.setAttribute('tabindex', '0')
-      const options = themes.map(theme => {
-        const li = document.createElement('li')
-        const button = document.createElement('button')
-        button.innerText = theme
-        button.addEventListener('click', () => changeTheme(theme))
-        if (theme === defaultTheme) button.classList.add('active')
-        li.append(button)
-        return li
-      })
-      const ul = document.createElement('ul')
-      ul.classList.add('dropdown-content', 'menu', 'p-2', 'shadow', 'bg-base-300', 'rounded-box', 'border', 'border-base-content', 'border-opacity-50')
-      ul.append(...options)
-      ul.id = 'theme-dropdown'
-      const dropdownContainer = document.createElement('div')
-      dropdownContainer.classList.add('dropdown', 'dropdown-end')
-      dropdownContainer.append(label)
-      dropdownContainer.append(ul)
-      const div = document.createElement('div')
-      div.append(dropdownContainer)
-      div.classList.add('flex', 'justify-center', 'gap-4')
-      const container = document.querySelector('#header-right')
-      container.append(div)
-    </script>
   </div>
 
   <div class="bg-base-200 bg-gradient-to-r from-primary to-secondary px-4 py-1"></div>
