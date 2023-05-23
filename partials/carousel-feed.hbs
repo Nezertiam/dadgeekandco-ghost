@@ -1,7 +1,7 @@
-<div class="w-full grid grid-cols-3 gap-4 py-4">
+<div class="w-full carousel md:grid md:grid-cols-3 sm:gap-4 py-4">
   {{#foreach posts}}
-    <div class="w-full md:first:col-span-3">
-      <div class="w-full h-full px-3 sm:px-0">
+    <div class="carousel-item w-full sm:w-64 md:w-full md:first:col-span-3">
+      <div class="w-full md:w-full px-3 sm:px-0">
         {{#if @first}}
           {{> "card-first" }} {{!-- partials/card.hbs --}}
         {{else}}

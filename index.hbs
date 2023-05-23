@@ -15,7 +15,7 @@
 
       <h2 class="text-3xl font-bold mb-4 text-gradient-ps">Nos derniers tests</h2>
       {{#get "posts" filter="tags:['test']" limit="4" include="tags,authors"}}
-        {{> "feed"}}
+        {{> "carousel-feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
         <a href="/tag/test" class="btn btn-primary btn-sm">Voir plus de tests</a>
@@ -25,7 +25,7 @@
 
       <h2 class="text-3xl font-bold mb-4 text-gradient-sp">Nos derniers articles</h2>
       {{#get "posts" filter="tags:['news']" limit="4" include="tags,authors"}}
-        {{> "feed"}}
+        {{> "carousel-feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
         <a href="/tag/news" class="btn btn-secondary btn-sm">Voir plus d'actus</a>
@@ -35,7 +35,7 @@
 
       <h2 class="text-3xl font-bold mb-4 text-gradient-as">Nos dernières vidéos</h2>
       {{#get "posts" filter="tags:['video']" limit="4" include="tags,authors"}}
-        {{> "feed"}}
+        {{> "carousel-feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
         <a href="/tag/video" class="btn btn-accent btn-sm">Voir plus de vidéos</a>
