@@ -84,7 +84,7 @@
     */
     const setCookie = (name, value) => {
       const expiration = createExpiration()
-      document.cookie = `${name}=${value};expires=${expiration}`
+      document.cookie = `${name}=${value};expires=${expiration};path=/`
     }
 
     /**
