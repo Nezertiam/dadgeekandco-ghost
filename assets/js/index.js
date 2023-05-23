@@ -7,3 +7,4 @@ import infiniteScroll from "./infiniteScroll"
 
 // Call the menu and infinite scroll functions
 menuOpen()
+infiniteScroll()
