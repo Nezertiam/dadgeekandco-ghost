@@ -2,7 +2,7 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="gh-card {{post_class}} bg-base-100 rounded-3xl w-full overflow-hidden h-full shadow-lg md:bg-gradient-to-tr md:from-primary md:to-secondary">
+<article class="md:col-span-3 gh-card {{post_class}} bg-base-100 rounded-3xl w-full overflow-hidden h-full shadow-lg md:bg-gradient-to-tr md:from-primary md:to-secondary">
   <a class="gh-card-link px-4 md:px-0 py-6 md:py-0 flex flex-col h-full md:flex-row md:items-center" href="{{url}}">
     {{#if feature_image}}
       <picture class="gh-card-picture flex-0 md:object-cover md:object-center md:w-1/2">
@@ -65,3 +65,4 @@ Re-usable card for linking to posts
     </div>
   </a>
 </article>
+

@@ -1,13 +1,9 @@
-<div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-4">
+<div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-4 gh-postfeed">
   {{#foreach posts}}
-    <div class="w-full md:first:col-span-3">
-      <div class="w-full h-full px-3 sm:px-0">
-        {{#if @first}}
-          {{> "card-first" }} {{!-- partials/card.hbs --}}
-        {{else}}
-          {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
-        {{/if}}
-      </div>
-    </div>
+    {{#if @first}}
+      {{> "card-first" }} {{!-- partials/card.hbs --}}
+    {{else}}
+      {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+    {{/if}}
   {{/foreach}}
 </div>
