@@ -3,7 +3,7 @@
     <div class="carousel-item w-full sm:w-64 md:w-full md:first:col-span-3">
       <div class="w-full md:w-full px-3 sm:px-0 gh-postfeed">
         {{#if @first}}
-          {{> "card-first" page=../pagination.page }} {{!-- partials/card.hbs --}}
+          {{> "card-first" }} {{!-- partials/card.hbs --}}
         {{else}}
           {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
         {{/if}}
