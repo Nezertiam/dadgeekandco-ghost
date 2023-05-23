@@ -145,7 +145,9 @@ html,
 }
 
 .text-gradient-ps,
-.text-gradient-sp {
+.text-gradient-sp,
+.text-gradient-as,
+.text-gradient-sa {
     -webkit-text-fill-color: transparent;
     @apply bg-clip-text bg-gradient-to-r;
 }
@@ -156,6 +158,13 @@ html,
 .text-gradient-sp {
     @apply from-secondary to-primary;
 }
+.text-gradient-sa {
+    @apply from-secondary to-accent;
+}
+.text-gradient-as {
+    @apply from-accent to-secondary;
+}
+
 
 .prose-post-content {
     @apply prose-a:text-accent;

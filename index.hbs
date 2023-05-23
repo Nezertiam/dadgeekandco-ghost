@@ -18,7 +18,7 @@
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
-        <a href="/tag/test" class="btn btn-primary btn-sm">Voir plus</a>
+        <a href="/tag/test" class="btn btn-primary btn-sm">Voir plus de tests</a>
       </div>
 
       <div class="divider"></div>
@@ -28,17 +28,17 @@
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
-        <a href="/tag/news" class="btn btn-primary btn-sm">Voir plus</a>
+        <a href="/tag/news" class="btn btn-secondary btn-sm">Voir plus d'actus</a>
       </div>
 
       <div class="divider"></div>
 
-      <h2 class="text-3xl font-bold mb-4 text-gradient-ps">Nos dernières vidéos</h2>
+      <h2 class="text-3xl font-bold mb-4 text-gradient-as">Nos dernières vidéos</h2>
       {{#get "posts" filter="tags:['video']" limit="4" include="tags,authors"}}
         {{> "feed"}}
       {{/get}}
       <div class="mt-4 flex justify-center sm:justify-end">
-        <a href="/tag/video" class="btn btn-primary btn-sm">Voir plus</a>
+        <a href="/tag/video" class="btn btn-accent btn-sm">Voir plus de vidéos</a>
       </div>
       
       <div class="mb-12">
