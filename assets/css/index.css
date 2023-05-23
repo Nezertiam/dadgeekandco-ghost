@@ -48,14 +48,12 @@ html,
 }
 
 .gh-page {
-    padding: 0 4vmin;
     @apply pt-10;
 }
 
 .gh-container {
     width: 100%;
-    margin: 0 auto;
-    @apply max-w-4xl;    
+    @apply max-w-4xl mx-auto px-4;    
 }
 
 .gh-head-actions a:not(.gh-button) {
@@ -84,6 +82,13 @@ html,
 /* .gh-card:not(:first-child) {
     margin: 8vmin auto 0;
 } */
+
+/* Default to 16 / 9 aspect ratio for YouTube & Vimeo embeds  */
+.kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
 
 .gh-card-link {
     display: flex;

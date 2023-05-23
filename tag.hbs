@@ -1,14 +1,19 @@
 {{!< default}}
 
 <div class="gh-page">
-  <div class="gh-container">
 
+  <div class="mb-16 mt-20">
     {{#tag}}
-      <header class="gh-page-head">
+      <header 
+        class="gh-page-head relative" 
+        style="{{#if feature_image}}background-image: url({{feature_image}}); background-size: cover{{/if}}"
+      >
 
-        <h1>{{name}}</h1>
+        <div class="absolute z-10 bg-gradient-to-tr from-secondary to-accent left-0 right-0 top-0 bottom-0 opacity-75 brightness-[25%]"></div>
 
-        <p>
+        <h1 class="relative z-20 text-white">{{name}}</h1>
+
+        <p class="relative z-20 text-white">
           {{#if description}}
             {{description}}
           {{else}}
@@ -16,16 +21,11 @@
           {{/if}}
         </p>
 
-        {{#if feature_image}}
-          <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
-        {{/if}}
-
       </header>
     {{/tag}}
+  </div>
 
-    <div>
-      {{> "feed"}}
-    </div>
-
+  <div class="gh-container">
+    {{> "feed"}}
   </div>
 </div>
