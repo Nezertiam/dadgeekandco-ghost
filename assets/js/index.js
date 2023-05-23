@@ -3,10 +3,8 @@
 // Import JS
 import menuOpen from "./menuOpen"
 import infiniteScroll from "./infiniteScroll"
-import themeSwitcher from "./themeSwitcher"
 
 
 // Call the menu and infinite scroll functions
 menuOpen()
 infiniteScroll()
-themeSwitcher()
